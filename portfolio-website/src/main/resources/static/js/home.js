@@ -1,73 +1,93 @@
+/*import '/styles/home.css';*/
 import * as THREE from 'three';
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
-
-// Create the renderer
-const renderer = new THREE.WebGLRenderer({ antialias: true });
-renderer.outputColorSpace = THREE.SRGBColorSpace;
-renderer.setSize(window.innerWidth, window.innerHeight);  // Full-screen canvas
-renderer.setClearColor(0x000000);  // Black background
-renderer.setPixelRatio(window.devicePixelRatio);
-
-// Append the renderer's DOM element to the document
-document.body.appendChild(renderer.domElement);
-
-// Create the scene
 const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
-// Create the camera
-const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 1000);
-camera.position.set(3, 3, 14);  // Position the camera
+const renderer = new THREE.WebGLRenderer({
+    canvas: document.querySelector('#bg'),
+});
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+renderer.setPixelRatio(window.devicePixelRatio);
+renderer.setSize(window.innerWidth, window.innerHeight);
+camera.position.set(0,0,30);
 
 
-//Orbit controls
+const geometry = new THREE.TorusGeometry(10, 3, 16, 100);
+const material = new THREE.MeshStandardMaterial({ color: 0xFF6347 });
+const torus = new THREE.Mesh(geometry, material);
+//scene.add(torus);
+
+const pointLight = new THREE.PointLight(0xffffff);
+pointLight.position.set(20,20,20);
+const ambientLight = new THREE.AmbientLight(0xffffff);
+
+scene.add(pointLight, ambientLight);
+
+
 const controls = new OrbitControls(camera, renderer.domElement);
-controls.enableDamping = true;
-controls.enablePan = false;
-controls.minDistance = 5;
-controls.maxDistance = 20;
-controls.maxPolarAngle = Math.PI / 2;
-controls.minPolarAngle = Math.PI / 4;
-controls.autoRotate = false;
-controls.target = new THREE.Vector3(0, 1, 0);
-controls.update();
 
+function addOne(){
+    const loader = new GLTFLoader().setPath('oneModel/');
+    loader.load('scene.gltf', (gltf) => {
+        for (let i = 0; i < 500; i++) {
+            const one = gltf.scene.clone();
+            one.traverse((child) => {
+                if (child.isMesh) {
+                    child.material = new THREE.MeshStandardMaterial({ color: 0x00ff00 });
+                    child.castShadow = true;
+                    child.receiveShadow = true;
+                }
+            });
 
-// Add ground
-const groundGeometry = new THREE.PlaneGeometry(20, 20, 32, 32);
-groundGeometry.rotateX(-Math.PI / 2);  // Rotate the ground to be flat on the xz-plane
-const groundMaterial = new THREE.MeshStandardMaterial({ color: 0x555555, side: THREE.DoubleSide });
-const groundMesh = new THREE.Mesh(groundGeometry, groundMaterial);
-scene.add(groundMesh);
-
-// Add spotlight
-const spotLight = new THREE.SpotLight(0xffffff, 3, 100, 0.2, 0.5);
-spotLight.position.set(0, 25, 10);
-scene.add(spotLight);
-
-// Load the 3D object
-const loader = new GLTFLoader().setPath('retroPcScene/');
-loader.load('scene.gltf', (gltf) => {
-    const mesh = gltf.scene;
-    mesh.position.set(0, 1.5, -4);  // Position the object
-    mesh.scale.set(12, 12, 12);  // Scale the object to be larger
-    scene.add(mesh);
-});
-
-// Function to handle window resize and maintain responsiveness
-window.addEventListener('resize', () => {
-    const width = window.innerWidth;
-    const height = window.innerHeight;
-    renderer.setSize(width, height);
-    camera.aspect = width / height;
-    camera.updateProjectionMatrix();
-});
-
-// Animation loop
-function animate() {
-    requestAnimationFrame(animate);
-    controls.update();
-    renderer.render(scene, camera);
+            const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(300));
+            one.position.set(x, y, z);
+            one.scale.set(6, 6, 6);  // Scale the object to be larger
+            scene.add(one);
+        }
+    });
 }
-animate();
+function addZero(){
+    const loader = new GLTFLoader().setPath('zeroModel/');
+    loader.load('scene.gltf', (gltf) => {
+        for (let i = 0; i < 500; i++) {
+            const zero = gltf.scene.clone();
+            zero.traverse((child) => {
+                if (child.isMesh) {
+                    child.material = new THREE.MeshStandardMaterial({ color: 0x00ff00 });
+                    child.castShadow = true;
+                    child.receiveShadow = true;
+                }
+            });
+
+            const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(300));
+            zero.position.set(x, y, z);
+            zero.scale.set(6, 6, 6);  // Scale the object to be larger
+            scene.add(zero);
+        }
+    });
+}
+
+addZero();
+addOne();
+
+function moveCamera(){
+    const t = document.body.getBoundingClientRect().top;
+    camera.position.z = Math.min(Math.max(t * -0.05, 30), 1000);;
+    camera.position.x = t * -0.00;
+    camera.position.y = t * -0.00;
+
+}
+document.body.onscroll = moveCamera;
+
+function animate(){
+    requestAnimationFrame(animate)
+    // torus.rotation.x += 0.01;
+    // torus.rotation.y += 0.005;
+    // torus.rotation.z += 0.01;
+    controls.update();
+    renderer.render(scene, camera)
+}
+animate()

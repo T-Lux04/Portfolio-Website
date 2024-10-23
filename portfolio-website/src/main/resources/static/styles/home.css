@@ -1,0 +1,86 @@
+canvas{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+}
+main{
+    color: black;
+    position: absolute;
+    position: relative;
+}
+h2{
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white;
+}
+#experience{
+    color: white;
+}
+.bg-light h2{
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: black;
+}
+
+.bg-light p{
+    font-size: 1.25rem;
+    color: black;
+}
+p{
+    font-size: 1.25rem;
+    color: white;
+}
+.section-content {
+    max-width: 800px;  /* You can adjust this value to make the sections narrower or wider */
+    margin: 0 auto;    /* Center the section horizontally */
+    padding: 2rem 1rem; /* Add top and bottom padding */
+}
+
+/* Hero Section */
+#hero {
+    height: 100vh;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#hero h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+}
+
+#hero p {
+    font-size: 1.25rem;
+}
+
+/* Reduce padding between sections */
+section {
+    padding: 2rem 0; /* Adjust padding to reduce vertical space */
+
+}
+
+/* Card Styling */
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+    background-color: #343a40;
+    color: #fff;
+    padding: 1rem 0; /* Smaller padding in footer */
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Add some more spacing for project and skill cards */
+#projects .card,
+#skills .list-group-item {
+    margin-bottom: 1rem;  /* Add bottom spacing between elements */
+}
