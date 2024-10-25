@@ -44,7 +44,7 @@ function addOne(){
 
             const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(300));
             one.position.set(x, y, z);
-            one.scale.set(6, 6, 6);  // Scale the object to be larger
+            one.scale.set(8, 8, 8);  // Scale the object to be larger
             scene.add(one);
         }
     });
@@ -64,7 +64,7 @@ function addZero(){
 
             const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(300));
             zero.position.set(x, y, z);
-            zero.scale.set(6, 6, 6);  // Scale the object to be larger
+            zero.scale.set(8, 8, 8);  // Scale the object to be larger
             scene.add(zero);
         }
     });
