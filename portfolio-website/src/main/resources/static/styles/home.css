@@ -13,7 +13,7 @@ h2{
     font-weight: bold;
     color: white;
 }
-#experience{
+#experience #projects{
     color: white;
 }
 .bg-light h2{
@@ -29,6 +29,10 @@ h2{
 p{
     font-size: 1.25rem;
     color: white;
+    font-weight: bold;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bolder; /* Use bolder for titles */
 }
 .section-content {
     max-width: 800px;  /* You can adjust this value to make the sections narrower or wider */
@@ -36,8 +40,7 @@ p{
     padding: 2rem 1rem; /* Add top and bottom padding */
 }
 
-/* Hero Section */
-#hero {
+#profile {
     height: 100vh;
     color: white;
     display: flex;
@@ -46,13 +49,52 @@ p{
     text-align: center;
 }
 
-#hero h1 {
-    font-size: 3.5rem;
-    font-weight: bold;
+#profile h1 {
+    font-size: 4rem;
+    font-weight: bolder;
 }
 
-#hero p {
-    font-size: 1.25rem;
+.carousel-item img{
+    border-radius: 10%;}
+.carousel-item-container {
+    height: 450px;
+}
+
+/* Responsive height adjustments */
+@media (max-width: 992px) {  /* Tablets and below */
+    .carousel-item-container {
+        height: 350px;
+    }
+}
+
+@media (max-width: 768px) {  /* Small devices */
+    .carousel-item-container {
+        height: 300px;
+    }
+}
+
+@media (max-width: 576px) {  /* Extra small devices */
+    .carousel-item-container {
+        height: 250px;
+    }
+}
+
+/* Image constraints to prevent overflow */
+.carousel-img {
+    max-height: 100%;       /* Limits image to container height */
+    max-width: 100%;        /* Limits image to container width */
+    object-fit: contain;    /* Ensures images keep their aspect ratio */
+}
+
+#about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+}
+#profile p {
+    font-size: 1.75rem;
 }
 
 /* Reduce padding between sections */
