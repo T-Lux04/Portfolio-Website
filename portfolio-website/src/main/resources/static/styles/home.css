@@ -26,7 +26,7 @@ h2{
     font-size: 1.25rem;
     color: black;
 }
-p{
+#profile #experience p{
     font-size: 1.25rem;
     color: white;
     font-weight: bold;
@@ -95,6 +95,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 #profile p {
     font-size: 1.75rem;
+}
+#projects h2{
+    color: white;
+}
+#projects p{
+    color: black;
 }
 
 /* Reduce padding between sections */
