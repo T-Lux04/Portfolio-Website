@@ -13,6 +13,9 @@ h2{
     font-weight: bold;
     color: white;
 }
+#contact h2{
+    color: white;
+}
 #experience #projects{
     color: white;
 }
