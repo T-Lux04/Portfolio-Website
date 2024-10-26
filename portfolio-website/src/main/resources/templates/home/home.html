@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Tim's website</title>
     <link rel="stylesheet" href="/styles/home.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
     <script type="importmap">
         {
@@ -126,10 +127,31 @@
         <div class="container">
             <h2 class="text-center mb-5">Skills</h2>
             <div class="row">
-                <div class="col-md-6 mb-3">
+                <!-- Front-End Skills -->
+                <div class="col-md-6 mb-4">
                     <ul class="list-group">
-                        <li class="list-group-item"><strong>Front-End:</strong> HTML, CSS, JavaScript...</li>
-                        <!-- Additional skills -->
+                        <li class="list-group-item"><strong>Front-End:</strong> HTML, CSS, JavaScript, Bootstrap, Thymeleaf, Three.js</li>
+                    </ul>
+                </div>
+
+                <!-- Back-End Skills -->
+                <div class="col-md-6 mb-4">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Back-End:</strong> SQL, REST API, Flask, Spring, Security, MariaDB</li>
+                    </ul>
+                </div>
+
+                <!-- Programming Languages -->
+                <div class="col-md-6 mb-4">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Programming Languages:</strong> JavaScript, Python, Java, C#, C++</li>
+                    </ul>
+                </div>
+
+                <!-- Tools and Technologies -->
+                <div class="col-md-6 mb-4">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Tools:</strong> Version Control (GitHub, GitLab), Unity, Visual Studio Code</li>
                     </ul>
                 </div>
             </div>
@@ -182,35 +204,85 @@
     <section id="education" class="section-content py-5 bg-light">
         <div class="container">
             <h2 class="text-center mb-5">Education</h2>
-            <div class="row">
-                <div class="col-md-6 mx-auto">
-                    <h4>Bachelor of Science in Computer Science | University of Tech</h4>
-                    <span>2017 - 2021</span>
-                    <p>GPA: 3.8/4.0</p>
+
+            <!-- University Education -->
+            <div class="row justify-content-center mb-4">
+                <div class="col-md-8 col-lg-6">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title">Bachelor of Science in Applied Software Engineering</h4>
+                            <h5>Cardiff University</h5>
+                            <p class="text-muted mb-1">2nd Year Student</p>
+                            <p class="mb-0">Expected Graduation: 2026</p>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+            <!-- A-Level Section -->
+            <div class="collapse" id = "ALevel">
+                <div class="row justify-content-center">
+                    <div class="col-md-8 col-lg-6">
+                        <h5 class="text-center mb-3">A-Levels</h5>
+                        <ul class="list-group">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Mathematics
+                                <span class="badge bg-primary rounded-pill">C</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Product Design
+                                <span class="badge bg-primary rounded-pill">B</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Computer Science
+                                <span class="badge bg-primary rounded-pill">C</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                IT (Cambridge Technical)
+                                <span class="badge bg-primary rounded-pill">Distinction</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <button class="btn btn-outline-primary" data-toggle="collapse" data-target="#ALevel" aria-expanded="false" aria-controls="ALevel">
+                See more...
+            </button>
+
         </div>
     </section>
-
+    <br>
     <!-- Contact Section -->
     <section id="contact" class="section-content py-5">
         <div class="container">
             <h2 class="text-center mb-5">Contact Me</h2>
-            <ul class="list-inline text-center">
-                <li class="list-inline-item"><a href="mailto:youremail@example.com">youremail@example.com</a></li>
-                <!-- Social links -->
-            </ul>
+            <div class="text-center mt-5 card">
+                <div class = "card-body">
+                    <div class = "mb-2">
+                        <a href="mailto:luxtimothee@gmail.com">luxtimothee@gmail.com</a>
+                    </div>
+                    <div class = "mb-2">
+                        <a href="https://www.linkedin.com/in/timothee-lux-8a87a22b2" target="_blank" ><i class="bi bi-linkedin"></i> www.linkedin.com/in/timothee-lux-8a87a22b2</a></div>
+                    <div class = "mb-2">
+                        <a href="https://github.com/T-Lux04" target="_blank"><i class="bi bi-github"></i> github.com/T-Lux04</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
-
+    <br>
     <!-- Footer -->
     <footer class="text-center py-4 bg-dark text-light">
         <p>&copy; 2024 [Your Name]. All Rights Reserved.</p>
     </footer>
 </main>
     <!-- Bootstrap JS and dependencies -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 <script type="module" src="/js/home.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 </html>
