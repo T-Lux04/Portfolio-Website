@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tim's website</title>
+    <link rel="stylesheet" href="static/styles/home.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdn.skypack.dev/three@0.132.2/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.132.2/examples/jsm/"
+            }
+        }
+    </script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.150.0/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.150.0/examples/jsm/loaders/GLTFLoader.js"></script>
+</head>
+<body>
+<canvas id="bg"></canvas>
+
+<main class="align-items-center text-center justify-content-center">
+
+    <section id="profile" class="text-center d-flex align-items-center justify-content-center vh-100">
+        <div>
+            <h1 class="display-4">Hi, I'm Tim</h1>
+            <p class="lead">2nd Year Software Engineering Student at Cardiff University</p>
+            <a href="#projects" class="btn btn-primary mt-4">My Projects</a>
+            <a href="#skills" class="btn btn-primary mt-4">Skills</a>
+            <a href="#experience" class="btn btn-primary mt-4">Experience</a>
+            <a href="#education" class="btn btn-primary mt-4">Education</a>
+            <a href="#contact" class="btn btn-primary mt-4">Contact</a>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="section-content py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">About Me</h2>
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="d-flex justify-content-center align-items-center carousel-item-container">
+                            <img class="carousel-img img-fluid mx-auto" src="static/images/aboutMePhoto2.jpeg" alt="First slide">
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center align-items-center carousel-item-container">
+                            <img class="carousel-img img-fluid mx-auto" src="static/images/aboutMePhoto4.jpeg" alt="Second slide">
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center align-items-center carousel-item-container">
+                            <img class="carousel-img img-fluid mx-auto" src="static/images/aboutMePhoto5.jpeg" alt="Third slide">
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center align-items-center carousel-item-container">
+                            <img class="carousel-img img-fluid mx-auto" src="static/images/aboutMePhoto3.jpeg" alt="Fourth slide">
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center align-items-center carousel-item-container">
+                            <img class="carousel-img img-fluid mx-auto" src="static/images/aboutMePhoto1.jpeg" alt="Fifth slide">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carousel Controls -->
+                <a class="carousel-control-prev" id="controls" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next controls" href="#carouselExampleControls" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+        <br>
+
+            <p class="collapse lead text-center" id = "text">
+                Since I was young, technology has always captivated me. My inspiration stemmed from my ambitious uncle,
+                Raphael Elofer, who carved his career path all the way to becoming a director at Microsoft.
+                Witnessing his journey ignited a fire within me, driving my fascination and dedication to innovation and
+                creativity for the betterment of our world. Becoming a software engineer has been the perfect amalgamation
+                of my love for computers and the ever-evolving landscape of modern technology. With over 5 years of
+                experience in the field, I've acquired a wealth of knowledge and skills that have proven invaluable.
+                Through personal and collaborative projects, I've gained crucial competencies such as organization,
+                communication, and architectural skills, which I'm committed to continuously refining in all my
+                future projects. My 5-year immersion in computer science during secondary-school has provided me with a
+                solid understanding of the foundational theories and concepts that underpin modern technology,
+                serving as an unwavering base for my ongoing growth. While the theoretical aspects are undeniably intriguing,
+                my true passion lies in practical application. Software engineering empowers me to bring these concepts to life,
+                driving me to innovate and create solutions that push the boundaries of what's possible.</p>
+        <div class="text-center mb-5">
+        <button class="btn btn-outline-primary" data-toggle="collapse" data-target="#text" aria-expanded="false" aria-controls="text">
+            See more...
+        </button>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section-content py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Projects</h2>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+                <!-- Project Card 1 -->
+                <div class="col">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title mb-3">Project 1: Portfolio Website</h5>
+                            <p class="card-text flex-grow-1">A personal portfolio website built with HTML, CSS, and JavaScript to showcase my work and skills with an elegant and responsive design.</p>
+                            <a href="https://github.com/T-Lux04/Portfolio-Website" class="btn btn-outline-primary mt-auto">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Card 2 -->
+                <div class="col">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title mb-3">Project 2: E-commerce Store</h5>
+                            <p class="card-text flex-grow-1">An e-commerce website developed using Python and Bootstrap, featuring product listings, a shopping cart, and secure checkout process. Unfortunately, this is a private repository for security purposes.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Card 3 -->
+                <div class="col">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title mb-3">Project 3: Sudoku Solver</h5>
+                            <p class="card-text flex-grow-1">A fully functional Sudoku solver implementing a backtracking algorithm in Python. It teaches the foundational role of systematic search and optimization in AI.</p>
+                            <a href="https://github.com/T-Lux04/Sudoku-Solver" class="btn btn-outline-primary mt-auto">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Card 4 -->
+                <div class="col">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title mb-3">Project 4: Koi Farm (Game)</h5>
+                            <p class="card-text flex-grow-1">Developing a game using C#, Unity, Blender, and more to create a commercial mobile game.</p>
+                            <a href="https://gitlab.com/lucastim/Koi-GAME-2024" class="btn btn-outline-primary mt-auto">View Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Skills Section -->
+    <section id="skills" class="section-content py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Skills</h2>
+            <div class="row">
+                <!-- Front-End Skills -->
+                <div class="col-md-6 mb-4">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Front-End:</strong> HTML, CSS, JavaScript, Bootstrap, Thymeleaf, Three.js</li>
+                    </ul>
+                </div>
+
+                <!-- Back-End Skills -->
+                <div class="col-md-6 mb-4">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Back-End:</strong> SQL, REST API, Flask, Spring, Security, MariaDB</li>
+                    </ul>
+                </div>
+
+                <!-- Programming Languages -->
+                <div class="col-md-6 mb-4">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Programming Languages:</strong> JavaScript, Python, Java, C#, C++</li>
+                    </ul>
+                </div>
+
+                <!-- Tools and Technologies -->
+                <div class="col-md-6 mb-4">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Tools:</strong> Version Control (GitHub, GitLab), Unity, Visual Studio Code</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section-content py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Experience</h2>
+
+            <div class="row justify-content-center">
+                <!-- Experience 1 -->
+                <div class="col-md-6 mb-4">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title mb-1">Socializing App for Legal and General (Academic project)</h4>
+                            <span class="text-muted">Nov 2023 - Jan 2024</span>
+                            <p class="mt-3">I developed a Socializing App for a proof of concept for Legal And General along-side my team. I personally developed the frontend and backend for the creation and distribution of quizzes to employees. Utilising Html, Bootstrap, CSS, Jinja2, Python, Flask and SQL</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience 2 -->
+                <div class="col-md-6 mb-4">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title mb-1">Travel history - Blood Donor screening (Academic project)</h4>
+                            <span class="text-muted">Oct 2024 - Present</span>
+                            <p class="mt-3">As a team we are tasked with designing and implementing a system to track peoples travel history to establish their eligibility. I will be using Java, SpringBoot, Thymeleaf, MariaDB, HTML, CSS, Bootstrap, JavaScript to develop the application</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience 3 -->
+                <div class="col-md-6 mb-4">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title mb-1">Work Experience (1 week)</h4>
+                            <span class="text-muted"> Jun 2021 - Jul 2021</span>
+                            <p class="mt-3">During my work experience with Daryl Gungadoo, we looked into game development and the industry. I learnt new tools such as Unreal engine, Unity, and Twin-motion. This enriched and broadened my knowledge of development in industry</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section-content py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Education</h2>
+
+            <!-- University Education -->
+            <div class="row justify-content-center mb-4">
+                <div class="col-md-8 col-lg-6">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title">Bachelor of Science in Applied Software Engineering</h4>
+                            <h5>Cardiff University</h5>
+                            <p class="text-muted mb-1">2nd Year Student</p>
+                            <p class="mb-0">Expected Graduation: 2026</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- A-Level Section -->
+            <div class="collapse" id = "ALevel">
+                <div class="row justify-content-center">
+                    <div class="col-md-8 col-lg-6">
+                        <h5 class="text-center mb-3">A-Levels</h5>
+                        <ul class="list-group">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Mathematics
+                                <span class="badge bg-primary rounded-pill">C</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Product Design
+                                <span class="badge bg-primary rounded-pill">B</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Computer Science
+                                <span class="badge bg-primary rounded-pill">C</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                IT (Cambridge Technical)
+                                <span class="badge bg-primary rounded-pill">Distinction</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <button class="btn btn-outline-primary" data-toggle="collapse" data-target="#ALevel" aria-expanded="false" aria-controls="ALevel">
+                See more...
+            </button>
+
+        </div>
+    </section>
+    <br>
+    <!-- Contact Section -->
+    <section id="contact" class="section-content py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Contact Me</h2>
+            <div class="text-center mt-5 card">
+                <div class = "card-body">
+                    <div class = "mb-2">
+                        <a href="mailto:luxtimothee@gmail.com">luxtimothee@gmail.com</a>
+                    </div>
+                    <div class = "mb-2">
+                        <a href="https://www.linkedin.com/in/timothee-lux-8a87a22b2" target="_blank" ><i class="bi bi-linkedin"></i> www.linkedin.com/in/timothee-lux-8a87a22b2</a></div>
+                    <div class = "mb-2">
+                        <a href="https://github.com/T-Lux04" target="_blank"><i class="bi bi-github"></i> github.com/T-Lux04</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <br>
+    <!-- Footer -->
+    <footer class="text-center py-4 bg-dark text-light">
+        <p>&copy; 2024 Timothee Lux. All Rights Reserved.</p>
+        <p>
+            This project incorporates work based on the following 3D models by
+            <a href="https://sketchfab.com/jihambru" target="_blank" class="text-light">Jihambru</a>:
+        </p>
+        <ul class="list-unstyled">
+            <li>
+                <a href="https://sketchfab.com/3d-models/3d-number-1-one-ad1f5a58f50b4176ac6684a7ad8eac2f" target="_blank" class="text-light">
+                    "3D Number - 1 (ONE)"
+                </a>
+                licensed under
+                <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank" class="text-light">
+                    CC-BY-4.0
+                </a>.
+            </li>
+            <li>
+                <a href="https://sketchfab.com/3d-models/3d-number-0-zero-d42fec33cba742268201501f141f8965" target="_blank" class="text-light">
+                    "3D Number - 0 (ZERO)"
+                </a>
+                licensed under
+                <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank" class="text-light">
+                    CC-BY-4.0
+                </a>.
+            </li>
+        </ul>
+    </footer>
+
+</main>
+    <!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+<script type="module" src="static/js/home.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>
